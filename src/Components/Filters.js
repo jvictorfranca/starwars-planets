@@ -7,28 +7,16 @@ function Filters() {
     'diameter', 'rotation_period', 'surface_water']);
   const { filters } = useContext(PlanetsContext);
 
-  // useEffect(() => {
-  //   let newFiltersLeft = [...filtersLeft];
-  //   filters.filterByNumericValues.forEach((filter) => {
-  //     newFiltersLeft = newFiltersLeft.filter((item) => item !== filter.column);
-  //   });
-  //   setFiltersLeft(newFiltersLeft);
-  //   console.log(filtersLeft, newFiltersLeft);
-  // }, [filtersLeft, filters.filterByNumericValues]);
-
-  let newFiltersLeft = [...filtersLeft];
   useEffect(() => {
     filters.filterByNumericValues.forEach((filter) => {
-      newFiltersLeft = newFiltersLeft.filter((item) => item !== filter.column);
+      setFiltersLeft((prevState) => prevState.filter((item) => item !== filter.column));
       console.log(filter);
     });
-    setFiltersLeft(newFiltersLeft);
-    console.log(newFiltersLeft);
   }, [filters.filterByNumericValues]);
 
   return (
     <section>
-      <NewFilter options={ newFiltersLeft } />
+      <NewFilter options={ filtersLeft } />
     </section>
   );
 }
