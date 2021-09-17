@@ -8,6 +8,7 @@ function PlanetsProvider({ children }) {
     filterByName: {
       name: '',
     },
+    filterByNumericValues: [],
   });
   const [loading, setLoading] = useState(false);
   const contextValue = {

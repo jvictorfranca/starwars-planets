@@ -7,11 +7,23 @@ function PlanetsTable() {
   useFetchHook();
   const { data, loading, filters } = useContext(PlanetsContext);
   let filteredData = data;
+  const compareFunction = (planet, filter) => {
+    let answer;
+    if (filter.comparison === 'maior que') {
+      answer = parseInt(planet[filter.column], 10) > parseInt(filter.value, 10);
+    } else if (filter.comparison === 'menor que') {
+      answer = parseInt(planet[filter.column], 10) < parseInt(filter.value, 10);
+    } else if (filter.comparison === 'igual a') {
+      answer = parseInt(planet[filter.column], 10) === parseInt(filter.value, 10);
+    }
+    return answer;
+  };
   if (data) {
     filteredData = data.filter((planet) => planet.name
       .includes(filters.filterByName.name));
-    // console.log(data.filter((planet) => planet.name.includes(filters.filterByName.name)));
-    console.log(filteredData);
+    filters.filterByNumericValues.forEach((filter) => {
+      filteredData = filteredData.filter((planet) => compareFunction(planet, filter));
+    });
   }
 
   return (
