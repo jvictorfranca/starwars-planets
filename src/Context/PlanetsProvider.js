@@ -3,13 +3,17 @@ import propTypes from 'prop-types';
 import PlanetsContext from './PlanetsContext';
 
 function PlanetsProvider({ children }) {
-  const [data, setData] = useState([]);
-  const [filter, setFilters] = useState({});
+  const [data, setData] = useState();
+  const [filters, setFilters] = useState({
+    filterByName: {
+      name: '',
+    },
+  });
   const [loading, setLoading] = useState(false);
   const contextValue = {
     data,
     setData,
-    filter,
+    filters,
     setFilters,
     loading,
     setLoading,

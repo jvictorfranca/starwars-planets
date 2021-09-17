@@ -10,8 +10,7 @@ function useFetchHook() {
       .then((response) => response.json())
       .then((dataValue) => {
         setData(dataValue.results);
-        setLoading(false);
-      });
+      }).then(setLoading(false));
   }, [setData, setLoading]);
 }
 

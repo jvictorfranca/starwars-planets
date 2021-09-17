@@ -5,7 +5,14 @@ import PlanetTableItem from './PlanetTableItem';
 
 function PlanetsTable() {
   useFetchHook();
-  const { data, loading } = useContext(PlanetsContext);
+  const { data, loading, filters } = useContext(PlanetsContext);
+  let filteredData = data;
+  if (data) {
+    filteredData = data.filter((planet) => planet.name
+      .includes(filters.filterByName.name));
+    // console.log(data.filter((planet) => planet.name.includes(filters.filterByName.name)));
+    console.log(filteredData);
+  }
 
   return (
     (loading || !data)
@@ -30,7 +37,7 @@ function PlanetsTable() {
             </tr>
           </thead>
           <tbody>
-            {data.map((planet) => (<PlanetTableItem
+            {filteredData.map((planet) => (<PlanetTableItem
               planet={ planet }
               key={ planet.name }
             />))}
