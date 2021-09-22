@@ -97,7 +97,7 @@ main {
 
 .created-filter {
   align-items: center;
-  background-color: rgb(102, 102, 143);
+  background-color: rgba(102, 102, 143, 0.96);
   border: solid rgb(11, 11, 55) 4px;
   display: flex;
   flex-direction: column;
