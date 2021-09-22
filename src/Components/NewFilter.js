@@ -30,7 +30,7 @@ function NewFilter({ options }) {
   return (
     options.length > 0
     && (
-      <form action="GET">
+      <form action="GET" className="new-filter">
         {/* <select
         name="column"
         id="column"

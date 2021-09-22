@@ -18,6 +18,8 @@ function NameFilter() {
       onChange={ handleNameInput }
       data-testid="name-filter"
       value={ filters.filterByName.name }
+      className="name-filter"
+      placeholder="Search by name:"
     />
   );
 }

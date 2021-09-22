@@ -15,7 +15,7 @@ function CreatedNumberFilter({ filter }) {
     }));
   };
   return (
-    <section data-testid="filter">
+    <section data-testid="filter" className="created-filter">
 
       <p>{column}</p>
       <p>{comparison}</p>

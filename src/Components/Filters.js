@@ -20,8 +20,13 @@ function Filters() {
   return (
     <section>
       <NewFilter options={ filtersLeft } />
-      {filters.filterByNumericValues
-        .map((filter, index) => <CreatedNumberFilter filter={ filter } key={ index } />)}
+      <div className="filters-container">
+        {filters.filterByNumericValues
+          .map((filter, index) => (<CreatedNumberFilter
+            filter={ filter }
+            key={ index }
+          />))}
+      </div>
     </section>
   );
 }

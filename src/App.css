@@ -39,3 +39,78 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: rgb(99, 99, 123);
+  background-image: url('./images/bUlkrc.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+table {
+  margin-top: 15px;
+  text-align: center;
+}
+
+th {
+  background-color: rgb(59, 59, 109);
+  color: white;
+  font-size: 20px;
+  padding: 20px 30px;
+
+}
+
+tr {
+  background-color: rgba(123, 123, 140, 0.905);
+  padding: 10px;
+}
+
+
+.name-filter {
+  height: 30px;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 60%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-filter {
+  display: flex;
+  height: 40px;
+  margin: auto;
+  width: 30%;
+}
+
+.new-filter select, .new-filter input, .new-filter button {
+  background-color: rgb(173, 174, 209);
+  margin: 3px;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: center;
+}
+
+.created-filter {
+  align-items: center;
+  background-color: rgb(102, 102, 143);
+  border: solid rgb(11, 11, 55) 4px;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  padding: 10px 30px;
+}
+
+.created-filter button {
+  border: red solid 1px;
+  color: red;
+  padding: 5px 10px;
+}
+
+.created-filter button:hover {
+  background-color: rgb(186, 104, 104);
+}
